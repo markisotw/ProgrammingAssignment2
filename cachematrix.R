@@ -1,4 +1,4 @@
-
+#create special matrix that can cache its inverse
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) { #1st requirement
@@ -12,7 +12,7 @@ makeCacheMatrix <- function(x = matrix()) {
        setinverse = setinverse,
        getinverse = getinverse)
 }
-#cachesolve
+#cachesolve by checking if the inversion happened before, if yes, retrives, otherwise, computes
 cacheSolve <- function(x, ...) {
   m <- x$getinverse()
   if(!is.null(m)) { #comparing process
